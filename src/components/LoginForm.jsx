@@ -57,8 +57,8 @@ const LoginForm = () => {
     <Container fluid className="min-vh-100 p-0 align-items-center justify-content-center d-flex">
       <Row className="w-100 m-0 h-100 justify-content-center align-items-center" style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <Col md={6} className="p-2 md:p-5 bg-white login-container">
-          <h2 className="text-left mb-2">Sign In</h2>
-          <p className="text-left mb-4"style={{
+          <h2 className="text-center text-md-start mb-2">Sign In</h2>
+          <p className="text-center text-md-start mb-4"style={{
     fontWeight: 'bold',}}>New user? 
             <a href="/register" className="text-blue ms-2">Create an account</a>
           </p>

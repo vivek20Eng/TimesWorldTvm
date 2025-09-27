@@ -10,7 +10,7 @@ A modern, responsive React application for exploring countries. Users log in to 
 
 ## 🌐 Live link: [Live Demo](https://times-world-tvm.vercel.app/)
 
-![App Screenshot](https://via.placeholder.com/800x400?text=Country+Explorer+App) 
+![App Screenshot](/screenshorts/country-banner-page.png) 
 
 ## 📑 Table of Contents
 
@@ -86,15 +86,15 @@ yarn start
 
 ### 🔑Login Page
 
-![Login Page](https://via.placeholder.com/400x600?text=Login+Page)
+![Login Page](/screenshorts/login-page.png)
 
 ### 🏠 Home Page - Slider
 
-![Home Slider](https://via.placeholder.com/800x300?text=Welcome+Slider)
+![Home Slider](/screenshorts/country-banner-page.png)
 
 ### 🌍 Country Cards
 
-![Country Cards](https://via.placeholder.com/800x400?text=Country+Grid)
+![Country Cards](/screenshorts/country-list-page.png)
 
 
 ## 🔧 Acknowledgments
