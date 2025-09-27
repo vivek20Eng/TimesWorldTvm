@@ -1,5 +1,4 @@
 // src/redux/countrySlice.js --->
-
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchCountries = createAsyncThunk(
@@ -21,9 +20,9 @@ const initialState = {
   displayedCountries: [],
   loading: false,
   error: null,
-  pageSize: 10,
+  pageSize: 8,
   currentPage: 1,
-  filterRegion: 'All', // Filter by region
+  filterRegion: 'All',
 };
 
 const countrySlice = createSlice({
@@ -31,18 +30,19 @@ const countrySlice = createSlice({
   initialState,
   reducers: {
     setFilter: (state, action) => {
+      if (!['All', 'Asia', 'Europe'].includes(action.payload)) return;
       state.filterRegion = action.payload;
       state.currentPage = 1;
-      state.displayedCountries = state.allCountries
-        .filter(c => action.payload === 'All' || c.region === action.payload)
-        .slice(0, state.pageSize);
+      const filtered = state.allCountries.filter(c => action.payload === 'All' || c.region === action.payload);
+      state.displayedCountries = filtered.slice(0, state.pageSize * state.currentPage);
     },
     loadMore: (state) => {
       const filtered = state.allCountries.filter(c => 
         state.filterRegion === 'All' || c.region === state.filterRegion
       );
       const nextPage = state.currentPage + 1;
-      const start = (nextPage - 1) * state.pageSize;
+      const start = state.currentPage * state.pageSize;
+      if (start >= filtered.length) return;
       const newCountries = filtered.slice(start, start + state.pageSize);
       state.displayedCountries = [...state.displayedCountries, ...newCountries];
       state.currentPage = nextPage;
@@ -52,6 +52,7 @@ const countrySlice = createSlice({
     builder
       .addCase(fetchCountries.pending, (state) => {
         state.loading = true;
+        state.error = null;
       })
       .addCase(fetchCountries.fulfilled, (state, action) => {
         state.loading = false;

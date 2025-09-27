@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Country Explorer App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![React](https://img.shields.io/badge/React-18.2.0-blue?style=flat&logo=react)](https://reactjs.org/)
+[![Redux Toolkit](https://img.shields.io/badge/Redux%20Toolkit-1.9.5-red?style=flat&logo=redux)](https://redux-toolkit.js.org/)
+[![React Bootstrap](https://img.shields.io/badge/React%20Bootstrap-2.8.0-green?style=flat&logo=react-bootstrap)](https://react-bootstrap.github.io/)
+[![Swiper.js](https://img.shields.io/badge/Swiper.js-10.0.0-yellow?style=flat&logo=swiper)](https://swiperjs.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Available Scripts
+A modern, responsive React application for exploring countries. Users log in to access a welcome slider, filter countries by region, view country cards with flags, and load more results. Built with Redux Toolkit for state management, React Bootstrap for UI, and Swiper.js for the slider.
 
-In the project directory, you can run:
+![App Screenshot](https://via.placeholder.com/800x400?text=Country+Explorer+App) <!-- Replace with actual screenshot URL -->
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Project Structure](#project-structure)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Authentication**: Secure login form with password validation (min 8 chars, 1 uppercase, 1 number, 1 symbol) and social login placeholders.
+- **Responsive Design**: Full mobile/tablet/desktop support using Bootstrap grid.
+- **Welcome Slider**: Auto-sliding carousel with 1.5 slides visible (full + half peek), navigation arrows, and pagination dots.
+- **Country Explorer**: Fetch countries from REST API, filter by region (All, Asia, Europe), load more pagination, and skeleton loaders.
+- **State Management**: Redux Toolkit for auth, countries, filters, and pagination.
+- **UI/UX**: Skeleton loading, hover effects, shadows, and grayscale theme matching Figma mockups.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
 
-### `npm run build`
+- **Frontend**: React 18+, React Router, React Bootstrap
+- **State**: Redux Toolkit
+- **API**: Fetch from [restcountries.com](https://restcountries.com/v2/all?fields=name,region,flag)
+- **Slider**: Swiper.js for responsive carousel
+- **Icons**: React Icons (Font Awesome)
+- **Build**: Create React App
+- **Deployment**: Vercel/GitHub Pages
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The app will open at `http://localhost:3000`.
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Login**: Use `test@test.com` and `Abc123!@` (or any valid input) to sign in.
+2. **Home Page**: View the welcome slider, filter countries, and load more results.
+3. **Filtering**: Click "All", "Asia", or "Europe" to filter the list.
+4. **Pagination**: Click "Load More" to append 8 more countries.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Demo Credentials
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Username/Email: `test@test.com`
+- Password: `Abc123!@`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Screenshots
 
-## Learn More
+### Login Page
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Login Page](https://via.placeholder.com/400x600?text=Login+Page)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Home Page - Slider
 
-### Code Splitting
+![Home Slider](https://via.placeholder.com/800x300?text=Welcome+Slider)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Country Cards
 
-### Analyzing the Bundle Size
+![Country Cards](https://via.placeholder.com/800x400?text=Country+Grid)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Project Structure
 
-### Making a Progressive Web App
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [React](https://reactjs.org/) - The library for web and native user interfaces.
+- [Redux Toolkit](https://redux-toolkit.js.org/) - Official, opinionated, batteries-included toolkit for Redux.
+- [React Bootstrap](https://react-bootstrap.github.io/) - Bootstrap components for React.
+- [Swiper.js](https://swiperjs.com/) - Modern mobile touch slider.
+- Figma mockups for UI inspiration.
