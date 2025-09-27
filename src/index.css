@@ -252,7 +252,7 @@ body {
   align-items: stretch;
   height: 60px;
   opacity: 1;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out !important;
   cursor: pointer;
 }
 .country-grid .country-card:hover {
@@ -414,9 +414,23 @@ body {
 }
 
 .social-login-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-sm) !important;
   background: var(--color-hover-bg);
+}
+
+
+[data-aos] {
+  transition-property: transform, opacity;
+  transition-duration: 1s; 
+}
+
+[data-aos][data-aos][data-aos-delay] {
+  transition-delay: 0s; 
+}
+
+.aos-animate {
+  opacity: 1 !important; 
 }
 
 @media screen and (max-width: 768px) {

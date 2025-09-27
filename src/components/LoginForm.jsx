@@ -1,11 +1,12 @@
 // src/components/LoginForm.jsx --->
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../redux/authSlice';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import { FaGoogle, FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { Github, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Github, Facebook, Linkedin, Twitter } from 'lucide-react';
+
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -56,30 +57,30 @@ const LoginForm = () => {
   return (
     <Container fluid className="min-vh-100 p-0 align-items-center justify-content-center d-flex">
       <Row className="w-100 m-0 h-100 justify-content-center align-items-center" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <Col md={6} className="p-2 md:p-5 bg-white login-container">
-          <h2 className="text-center text-md-start mb-2">Sign In</h2>
-          <p className="text-center text-md-start mb-4"style={{
-    fontWeight: 'bold',}}>New user? 
-            <a href="/register" className="text-blue ms-2">Create an account</a>
+        <Col md={6} className="p-2 md:p-5 bg-white login-container" data-aos="fade-right">
+          <h2 className="text-center text-md-start mb-2" data-aos="zoom-in" data-aos-delay="200">Sign In</h2>
+          <p className="text-center text-md-start mb-4" style={{ fontWeight: 'bold' }} data-aos="fade-up" data-aos-delay="300">
+            New user? <a href="/register" className="text-blue ms-2">Create an account</a>
           </p>
-          <Form onSubmit={handleSubmit} className="w-100 w-md-50">
+          <Form onSubmit={handleSubmit} className="w-100 w-md-50" data-aos="fade-up" data-aos-delay="400">
             <Form.Group className="mb-4">
-              {/* <Form.Label>Username or email</Form.Label> */}
               <Form.Control
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 isInvalid={!!errors.username}
+                data-aos="slide-up"
               />
               <Form.Control.Feedback type="invalid">{errors.username}</Form.Control.Feedback>
             </Form.Group>
             <Form.Group className="mb-4">
-              {/* <Form.Label>Password</Form.Label> */}
               <Form.Control
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 isInvalid={!!errors.password}
+                data-aos="slide-up"
+                data-aos-delay="100"
               />
               <Form.Control.Feedback type="invalid">{errors.password}</Form.Control.Feedback>
             </Form.Group>
@@ -89,46 +90,54 @@ const LoginForm = () => {
                 label="Keep me signed in"
                 checked={keepSignedIn}
                 onChange={(e) => setKeepSignedIn(e.target.checked)}
+                data-aos="fade-in"
+                data-aos-delay="200"
               />
             </Form.Group>
-            <Button variant="dark" type="submit" className="w-100 mb-4 p-2" disabled={isSubmitting}>
+            <Button variant="dark" type="submit" className="w-100 mb-4 p-2" disabled={isSubmitting} data-aos="zoom-in" data-aos-delay="300">
               {isSubmitting ? 'Signing In...' : 'Sign In'}
             </Button>
-            <div className="text-center mb-4 position-relative">
+            <div className="text-center mb-4 position-relative" data-aos="fade-in" data-aos-delay="400">
               <hr className="separator-line" />
               <span className="px-2 py-1 bg-white position-relative" style={{ zIndex: 100 }}>Or Sign In With</span>
             </div>
-            <div className="d-flex gap-3 align-items-center justify-content-center">
+            <div className="d-flex gap-3 align-items-center justify-content-center" data-aos="fade-up" data-aos-delay="500">
               <Button 
-                    variant="outline-secondary" 
-                    className="social-login-btn btn btn-outline-secondary rounded-pill px-2 py-2 d-flex align-items-center justify-content-center"
-                  >
-                    <Github size={20} />
-                  </Button>
-                  <Button 
-                    variant="outline-secondary" 
-                    className="social-login-btn btn btn-outline-secondary rounded-pill px-2 py-2 d-flex align-items-center justify-content-center"
-                  >
-                    <Facebook size={20} />
-                  </Button>
-                  <Button 
-                    variant="outline-secondary" 
-                    className="social-login-btn btn btn-outline-secondary rounded-pill px-2 py-2 d-flex align-items-center justify-content-center"
-                   
-                  >
-                    <Linkedin size={20} />
-                  </Button>
-                  <Button 
-                    variant="outline-secondary" 
-                    className="social-login-btn btn btn-outline-secondary rounded-pill px-2 py-2 d-flex align-items-center justify-content-center"
-                   
-                  >
-                    <Twitter size={20} />
-                  </Button>
+                variant="outline-secondary" 
+                className="social-login-btn btn btn-outline-secondary rounded-pill px-2 py-2 d-flex align-items-center justify-content-center"
+                data-aos="zoom-in"
+                data-aos-delay="600"
+              >
+                <Github size={20} />
+              </Button>
+              <Button 
+                variant="outline-secondary" 
+                className="social-login-btn btn btn-outline-secondary rounded-pill px-2 py-2 d-flex align-items-center justify-content-center"
+                data-aos="zoom-in"
+                data-aos-delay="700"
+              >
+                <Facebook size={20} />
+              </Button>
+              <Button 
+                variant="outline-secondary" 
+                className="social-login-btn btn btn-outline-secondary rounded-pill px-2 py-2 d-flex align-items-center justify-content-center"
+                data-aos="zoom-in"
+                data-aos-delay="800"
+              >
+                <Linkedin size={20} />
+              </Button>
+              <Button 
+                variant="outline-secondary" 
+                className="social-login-btn btn btn-outline-secondary rounded-pill px-2 py-2 d-flex align-items-center justify-content-center"
+                data-aos="zoom-in"
+                data-aos-delay="900"
+              >
+                <Twitter size={20} />
+              </Button>
             </div>
           </Form>
         </Col>
-        <Col md={6} className="p-0 d-flex justify-content-center align-items-center d-md-block d-none">
+        <Col md={6} className="p-0 d-flex justify-content-center align-items-center d-md-block d-none" data-aos="fade-left">
           <img
             src="img/login-image.png"
             alt="Login Background"

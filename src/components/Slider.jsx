@@ -9,11 +9,14 @@ import 'swiper/css/autoplay';
 
 const Slider = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isInitialRender, setIsInitialRender] = useState(true); 
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2000);
+    // Set isInitialRender to false after the first render 
+    setIsInitialRender(false);
     return () => clearTimeout(timer);
   }, []);
 
@@ -28,7 +31,7 @@ const Slider = () => {
   }
 
   return (
-    <div className="slider-container">
+    <div className="slider-container" data-aos={isInitialRender ? 'fade-up' : ''} data-aos-delay={isInitialRender ? '200' : '0'}>
       <Swiper
         spaceBetween={20}
         slidesPerView={1.5}
@@ -44,7 +47,7 @@ const Slider = () => {
         className="mySwiper"
       >
         {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} data-aos={isInitialRender ? 'zoom-in' : ''} data-aos-delay={isInitialRender ? index * 200 + 300 : '0'}>
             <img
               src={slide.src}
               alt={slide.alt}

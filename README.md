@@ -1,3 +1,5 @@
+![Project Status](https://img.shields.io/badge/Status-%20Done-green)
+
 # Country Explorer App
 
 [![React](https://img.shields.io/badge/React-18.2.0-blue?style=flat&logo=react)](https://reactjs.org/)
