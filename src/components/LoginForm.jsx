@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { login } from '../redux/authSlice';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import { FaGoogle, FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { Github, Linkedin, Twitter, Facebook } from 'lucide-react';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -55,7 +56,7 @@ const LoginForm = () => {
   return (
     <Container fluid className="min-vh-100 p-0 align-items-center justify-content-center d-flex">
       <Row className="w-100 m-0 h-100 justify-content-center align-items-center" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <Col md={6} className="p-5 bg-white">
+        <Col md={6} className="p-2 md:p-5 bg-white login-container">
           <h2 className="text-left mb-2">Sign In</h2>
           <p className="text-left mb-4"style={{
     fontWeight: 'bold',}}>New user? 
@@ -90,7 +91,7 @@ const LoginForm = () => {
                 onChange={(e) => setKeepSignedIn(e.target.checked)}
               />
             </Form.Group>
-            <Button variant="dark" type="submit" className="w-100 mb-4" disabled={isSubmitting}>
+            <Button variant="dark" type="submit" className="w-100 mb-4 p-2" disabled={isSubmitting}>
               {isSubmitting ? 'Signing In...' : 'Sign In'}
             </Button>
             <div className="text-center mb-4 position-relative">
@@ -98,10 +99,32 @@ const LoginForm = () => {
               <span className="px-2 py-1 bg-white position-relative" style={{ zIndex: 100 }}>Or Sign In With</span>
             </div>
             <div className="d-flex gap-3 align-items-center justify-content-center">
-              <FaGoogle size={30} color="#4285F4" />
-              <FaFacebook size={30} color="#3B5998" />
-              <FaLinkedin size={30} color="#0077B5" />
-              <FaTwitter size={30} color="#1DA1F2" />
+              <Button 
+                    variant="outline-secondary" 
+                    className="social-login-btn btn btn-outline-secondary rounded-pill px-2 py-2 d-flex align-items-center justify-content-center"
+                  >
+                    <Github size={20} />
+                  </Button>
+                  <Button 
+                    variant="outline-secondary" 
+                    className="social-login-btn btn btn-outline-secondary rounded-pill px-2 py-2 d-flex align-items-center justify-content-center"
+                  >
+                    <Facebook size={20} />
+                  </Button>
+                  <Button 
+                    variant="outline-secondary" 
+                    className="social-login-btn btn btn-outline-secondary rounded-pill px-2 py-2 d-flex align-items-center justify-content-center"
+                   
+                  >
+                    <Linkedin size={20} />
+                  </Button>
+                  <Button 
+                    variant="outline-secondary" 
+                    className="social-login-btn btn btn-outline-secondary rounded-pill px-2 py-2 d-flex align-items-center justify-content-center"
+                   
+                  >
+                    <Twitter size={20} />
+                  </Button>
             </div>
           </Form>
         </Col>

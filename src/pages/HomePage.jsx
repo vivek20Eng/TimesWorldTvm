@@ -6,7 +6,8 @@ import { Container, Row, Button, Col, Spinner, Navbar, Nav } from 'react-bootstr
 import Slider from '../components/Slider';
 import CountryCard from '../components/CountryCard';
 import { FaGoogle, FaFacebook, FaLinkedin, FaTwitter, FaBars } from 'react-icons/fa'; // Added FaBars for hamburger
-
+import { Github, Linkedin, Twitter, Facebook } from 'lucide-react';
+import Footer from '../components/Footer';
 const HomePage = () => {
   const { allCountries, displayedCountries, loading, error, filterRegion } = useSelector((state) => state.countries);
   const dispatch = useDispatch();
@@ -107,14 +108,38 @@ const HomePage = () => {
       {/* Footer updated to match Figma with icons */}
       <div className="footer">
         <div className="footer-icons">
-          <FaGoogle size={20} color="#4285F4" />
-          <FaFacebook size={20} color="#3B5998" />
-          <FaLinkedin size={20} color="#0077B5" />
-          <FaTwitter size={20} color="#1DA1F2" />
+         <Button 
+                             variant="outline-secondary" 
+                             className="social-login-btn btn btn-outline-secondary rounded-pill px-2 py-2 d-flex align-items-center justify-content-center"
+                           >
+                             <Github size={20} />
+                           </Button>
+                           <Button 
+                             variant="outline-secondary" 
+                             className="social-login-btn btn btn-outline-secondary rounded-pill px-2 py-2 d-flex align-items-center justify-content-center"
+                           >
+                             <Facebook size={20} />
+                           </Button>
+                           <Button 
+                             variant="outline-secondary" 
+                             className="social-login-btn btn btn-outline-secondary rounded-pill px-2 py-2 d-flex align-items-center justify-content-center"
+                            
+                           >
+                             <Linkedin size={20} />
+                           </Button>
+                           <Button 
+                             variant="outline-secondary" 
+                             className="social-login-btn btn btn-outline-secondary rounded-pill px-2 py-2 d-flex align-items-center justify-content-center"
+                            
+                           >
+                             <Twitter size={20} />
+                           </Button>
         </div>
+
         <div className="footer-email">example@email.com</div>
         <div className="copyright">Copyright 2020 Name. All rights reserved.</div>
       </div>
+      <Footer />
     </Container>
   );
 };

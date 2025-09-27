@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { store } from './redux/store';
 import LoginPage from './pages/LoginPage';
 import HomePage from './pages/HomePage';
+import RegisterPage from './pages/RegisterPage';
 
 // AppContent
 const AppContent = () => {
@@ -15,6 +16,8 @@ const AppContent = () => {
     <Routes>
       <Route path="/" element={!isLoggedIn ? <LoginPage /> : <Navigate to="/home" />} />
       <Route path="/home" element={isLoggedIn ? <HomePage /> : <Navigate to="/" />} />
+            <Route path="/register" element={ <RegisterPage /> }/>
+
     </Routes>
   );
 };
