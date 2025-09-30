@@ -16,15 +16,13 @@ A modern, responsive React application for exploring countries. Users log in to 
 
 ## 📑 Table of Contents
 
-- [Features](#features)
+- [Features](#Features)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Screenshots](#screenshots)
 - [Project Structure](#project-structure)
 - [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## ✨ Features
 
